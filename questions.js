@@ -151,4 +151,16 @@ partiallyCurriedSum = curriedSum(1);
 console.log(partiallyCurriedSum(2, 3));
 console.log(curriedSum(2)(3, 3));
 
+//Adding elements to the array
+//write a function which gets an array and an element  and returns a array with this element at the end
 
+const numbers = [1,2];
+//pure function
+const append = (arr, el) => {
+    return [...arr, el]
+    //return arr.push(el)
+    // array.push mutates the original array in this case numbers 
+}
+const newNumbers = append(numbers, 3)
+console.log(newNumbers);
+console.log(numbers);
