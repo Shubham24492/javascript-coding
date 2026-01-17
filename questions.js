@@ -49,3 +49,24 @@ let ans3 = users.sort((a,b)=> {
     return 0
 })
 console.log("sort the users by age desc", ans3)
+//sort => filter => map
+
+//question what will be logged in first exapmle and second example
+let var1;
+console.log(var1);
+//undefined => vairable is declare but not initialised
+console.log(typeof var1);
+//undefined
+
+let var2 = null;
+console.log(var2);
+//null
+console.log(typeof var2);
+//object
+
+//Hoisting
+//Question what will be the output
+console.log(foo)
+foo = 1
+var foo = 1
+
