@@ -5,15 +5,18 @@ const users = [
         id: 1,
         name: "Jack",
         isActive: true,
+        age:20,
     },
     {
         id: 2,
         name: "John",
         isActive: true,
+        age: 18,
     }, {
         id: 3,
         name: "Mike",
         isActive: false,
+        age:30,
     },
 ]
 
@@ -37,4 +40,12 @@ console.log(ans1)
 let ans2 = users.filter((user)=> user.isActive).map((user)=> user.name)
 console.log(ans2)
 
-//3)
+//3)sort the users by age desc
+let ans3 = users.sort((a,b)=> {
+    if (a.age < b.age)
+        return 1
+    if (a.age > b.age)
+        return -1
+    return 0
+})
+console.log("sort the users by age desc", ans3)
