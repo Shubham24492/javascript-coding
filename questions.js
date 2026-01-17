@@ -66,7 +66,50 @@ console.log(typeof var2);
 
 //Hoisting
 //Question what will be the output
-console.log(foo)
-foo = 1
+console.log(foo, '=====>')
+foo = 1 //foo is not defined
 var foo = 1
 
+foo1 = 3;
+console.log(foo1);
+var foo1;
+//this is similiar to 
+/**
+ * var foo1;
+ * foo1 = 3;
+ * console.log(foo1)
+ */
+
+//functions are also hoisted
+foofun()
+function foofun() {console.log('function hoisting')}
+
+//Closure
+// craete a counter function which has increament and getValue functionality
+console.log('closure')
+const privateCounter = () => {
+    let count = 0;
+
+    return {
+        increment: (val = 1) => {
+            count += val
+
+        },
+        getValue: () => {
+            return count;
+        }
+    }
+}
+
+let counter = privateCounter()
+console.log(counter.getValue());
+counter.increment();
+console.log(counter.getValue());
+//we dont have access to private count property
+console.log(counter)
+//{ increment: [Function: increment], getValue: [Function: getValue] }
+//we have access inside a function to outside scope, 
+//inside increment we have access to count which is not in increment function
+//when we craete counter = privateCounter, we are creating a closure
+console.dir(counter.getValue)
+//Scopes > Closure (privateCounter) {count: 1}
