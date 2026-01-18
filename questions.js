@@ -219,7 +219,7 @@ const uniqueArray = arr => {
 }
 
 const uniqueArrwithReduce = (arr) => {
-    return arr.reduce((acc, el)=>{
+    return arr.reduce((acc, el) => {
         return acc.includes(el) ? acc : [...acc, el]
     }, [])
 }
@@ -227,3 +227,24 @@ console.log(uniqueArr([1, 2, 3, 1, 5, 3, 4]))
 console.log(uniqueArray([1, 2, 3, 1, 5, 3, 4]))
 console.log(uniqueArrwithReduce([1, 2, 3, 1, 5, 3, 4]))
 
+//question sort an array of numbers
+//sort mutates original array
+let arr = [3, 5, 1,2,2]
+
+console.log(arr.sort((a,b)=> a <b ? -1:1))
+console.log(arr.sort((a,b)=> a-b))
+
+console.log(arr.sort((a,b)=> a <b ? 1:-1))
+console.log(arr.sort((a,b)=> b-a))
+
+//sort the array of numbers
+//sort array of objects by author's lastname
+
+const books = [
+    {name: "Harry Potter", author: "J Rowling"},
+    {name: "Warcross", author: "M Lu"},
+    {name: "The Hunger Games", author: "S Collins"}
+]
+
+const sortedBooks = books.sort((book1, book2)=> book1.author.split(' ')[1] < book2.author.split(' ')[1]? -1: 1)
+console.log("Sorted books by authors laqst name", sortedBooks);
