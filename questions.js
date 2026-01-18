@@ -154,7 +154,7 @@ console.log(curriedSum(2)(3, 3));
 //Adding elements to the array
 //write a function which gets an array and an element  and returns a array with this element at the end
 
-const numbers = [1,2];
+const numbers = [1, 2];
 //pure function
 const append = (arr, el) => {
     return [...arr, el]
@@ -164,3 +164,41 @@ const append = (arr, el) => {
 const newNumbers = append(numbers, 3)
 console.log(newNumbers);
 console.log(numbers);
+
+let arr1 = [1]
+let arr2 = [2, 3]
+
+function mergeArr(arr1, arr2) {
+    // return arr1.concat(arr2);
+    return [...arr1, ...arr2]
+}
+console.log(arr1, arr2, mergeArr(arr1, arr2));
+
+//check that user with such name exists in array of objects
+const isUserPresent = users.find((user) => user.name == 'Jack')
+console.log("check that user with such name exists in array of objects", isUserPresent);
+
+const isNameExists = (name, users) => {
+    let exits = false;
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].name === name) {
+            exits = true;
+            break;
+        }
+    }
+    return exits;
+}
+
+console.log("check that user with such name exists in array of objects", isNameExists('John', users));
+
+let isNamePresent = (name, users) => users.some((user) => user.name == name)
+
+console.log("check that user with such name exists in array of objects", isNamePresent('Foo', users));
+
+let isNameFound = (name, users) => {
+    // const user = users.find((user) => user.name === name);
+    // return Boolean(user)
+    const index = users.findIndex((user) => user.name === name);
+    return index >= 0
+}
+console.log("check that user with such name exists in array of objects", isNameFound('Mike', users));
