@@ -202,3 +202,28 @@ let isNameFound = (name, users) => {
     return index >= 0
 }
 console.log("check that user with such name exists in array of objects", isNameFound('Mike', users));
+
+//question Remove all duplicates in array
+
+const uniqueArr = arr => {
+    return [...new Set(arr)]
+}
+
+const uniqueArray = arr => {
+    const result = [];
+    arr.forEach(item => {
+        if (!result.includes(item))
+            result.push(item)
+    })
+    return result
+}
+
+const uniqueArrwithReduce = (arr) => {
+    return arr.reduce((acc, el)=>{
+        return acc.includes(el) ? acc : [...acc, el]
+    }, [])
+}
+console.log(uniqueArr([1, 2, 3, 1, 5, 3, 4]))
+console.log(uniqueArray([1, 2, 3, 1, 5, 3, 4]))
+console.log(uniqueArrwithReduce([1, 2, 3, 1, 5, 3, 4]))
+
